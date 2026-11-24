@@ -1,0 +1,130 @@
+/* 设计 token：8pt 间距网格 + 有限字阶 + slate 中性色阶，全部 CSS 变量驱动 */
+:root {
+  /* 间距 4/8/12/16/24/32/48 */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+
+  /* 字阶 14/15/16/18/22/28 */
+  --fs-xs: 14px;
+  --fs-sm: 15px;
+  --fs-base: 16px;
+  --fs-md: 18px;
+  --fs-lg: 22px;
+  --fs-2xl: 28px;
+
+  /* 字重 */
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* 中性色阶 slate */
+  --slate-950: #090d16;
+  --slate-900: #0f1623;
+  --slate-800: #1a2436;
+  --slate-700: #2a3850;
+  --slate-600: #475569;
+  --slate-500: #64748b;
+  --slate-400: #94a3b8;
+  --slate-300: #cbd5e1;
+  --slate-200: #e2e8f0;
+  --slate-100: #f1f5f9;
+
+  /* 主色稀有：仅关键操作/选中态 */
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --primary-soft: rgba(59, 130, 246, 0.14);
+  --danger: #ef4444;
+  --danger-soft: rgba(239, 68, 68, 0.14);
+  --success: #22c55e;
+  --warning: #f59e0b;
+
+  --bg-app: var(--slate-950);
+  --bg-panel: var(--slate-900);
+  --bg-elevated: var(--slate-800);
+  --border: var(--slate-700);
+  --text-primary: var(--slate-100);
+  --text-secondary: var(--slate-400);
+  --text-muted: var(--slate-500);
+
+  /* 圆角三档 */
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+
+  /* 阴影三级，中性深色低透明 */
+  --shadow-sm: 0 1px 2px rgba(2, 6, 23, 0.5);
+  --shadow: 0 4px 12px rgba(2, 6, 23, 0.55);
+  --shadow-lg: 0 12px 32px rgba(2, 6, 23, 0.65);
+
+  /* 过渡统一 0.15/0.2s */
+  --t-fast: 0.15s ease;
+  --t: 0.2s ease;
+
+  --sidebar-w: 200px;
+  --header-h: 56px;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  font-size: var(--fs-xs);
+  color: var(--text-primary);
+  background: var(--bg-app);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-2) var(--sp-3);
+  outline: none;
+  transition: border-color var(--t-fast);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--slate-700);
+  border-radius: var(--radius-sm);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

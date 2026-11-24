@@ -1,0 +1,19 @@
+{
+  "name": "xray-screening-trainer",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Browser-based X-ray security screening training system",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "verify:physics": "node --experimental-transform-types scripts/verify_physics.ts",
+    "test:smoke": "esbuild scripts/smoke_test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/smoke_test.mjs && node node_modules/.cache/smoke_test.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
+  }
+}
